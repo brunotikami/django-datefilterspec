@@ -53,7 +53,7 @@ class DateRangeForm(DateRangeFilterBaseForm):
         self.fields['%s__gte' % field_name] = forms.DateField(
             label='',
             widget=AdminDateWidget(
-                attrs={'placeholder': _('From date')}
+                attrs={'placeholder': _('De')}
             ),
             localize=True,
             required=False
@@ -62,7 +62,7 @@ class DateRangeForm(DateRangeFilterBaseForm):
         self.fields['%s__lte' % field_name] = forms.DateField(
             label='',
             widget=AdminDateWidget(
-                attrs={'placeholder': _('To date')}
+                attrs={'placeholder': _('Ate')}
             ),
             localize=True,
             required=False,
