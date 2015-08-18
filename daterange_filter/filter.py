@@ -53,18 +53,18 @@ class DateRangeForm(DateRangeFilterBaseForm):
         self.fields['%s__gte' % field_name] = forms.DateField(
             label='',
             widget=AdminDateWidget(
-                attrs={'placeholder': _('De')}
+                attrs={'placeholder': _('{} De'.format(field_name))}
             ),
-            localize=True,
+            localize=False,
             required=False
         )
 
         self.fields['%s__lte' % field_name] = forms.DateField(
             label='',
             widget=AdminDateWidget(
-                attrs={'placeholder': _('Ate')}
+                attrs={'placeholder': _('{} Ate').format(field_name)}
             ),
-            localize=True,
+            localize=False,
             required=False,
         )
 
@@ -78,18 +78,18 @@ class DateTimeRangeForm(DateRangeFilterBaseForm):
         self.fields['%s__gte' % field_name] = forms.DateTimeField(
             label='',
             widget=DateRangeFilterAdminSplitDateTime(
-                attrs={'placeholder': _('From date')}
+                attrs={'placeholder': _('{} From date'.format(field_name))}
             ),
-            localize=True,
+            localize=False,
             required=False
         )
 
         self.fields['%s__lte' % field_name] = forms.DateTimeField(
             label='',
             widget=DateRangeFilterAdminSplitDateTime(
-                attrs={'placeholder': _('To date')},
+                attrs={'placeholder': _('{} To date'.format(field_name))},
             ),
-            localize=True,
+            localize=False,
             required=False
         )
 
